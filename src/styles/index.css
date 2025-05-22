@@ -1,0 +1,182 @@
+:root {
+  /* Light Theme Colors */
+  --primary-light: #0A84FF;
+  --primary-light-hover: #007AFF;
+  --secondary-light: #30D158;
+  --accent-light: #5E5CE6;
+  --success-light: #34C759;
+  --warning-light: #FF9F0A;
+  --error-light: #FF3B30;
+  --background-light: #FFFFFF;
+  --surface-light: #F2F2F7;
+  --card-light: #FFFFFF;
+  --text-primary-light: #000000;
+  --text-secondary-light: #3A3A3C;
+  --text-tertiary-light: #8E8E93;
+  --border-light: #C6C6C8;
+  
+  /* Dark Theme Colors */
+  --primary-dark: #0A84FF;
+  --primary-dark-hover: #409CFF;
+  --secondary-dark: #30D158;
+  --accent-dark: #5E5CE6;
+  --success-dark: #30D158;
+  --warning-dark: #FF9F0A;
+  --error-dark: #FF453A;
+  --background-dark: #000000;
+  --surface-dark: #1C1C1E;
+  --card-dark: #2C2C2E;
+  --text-primary-dark: #FFFFFF;
+  --text-secondary-dark: #EBEBF5;
+  --text-tertiary-dark: #8E8E93;
+  --border-dark: #38383A;
+  
+  /* Spacing (8px System) */
+  --space-1: 0.5rem;    /* 8px */
+  --space-2: 1rem;      /* 16px */
+  --space-3: 1.5rem;    /* 24px */
+  --space-4: 2rem;      /* 32px */
+  --space-5: 2.5rem;    /* 40px */
+  --space-6: 3rem;      /* 48px */
+  --space-7: 3.5rem;    /* 56px */
+  --space-8: 4rem;      /* 64px */
+  
+  /* Border Radius */
+  --radius-sm: 0.5rem;  /* 8px */
+  --radius-md: 1rem;    /* 16px */
+  --radius-lg: 1.5rem;  /* 24px */
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Z-index */
+  --z-header: 100;
+  --z-modal: 200;
+  --z-loader: 300;
+  
+  /* Typography */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+section {
+  padding: var(--space-6) var(--space-4);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: var(--space-2);
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light-hover);
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+  section { padding: var(--space-4) var(--space-2); }
+}
+
+@media (min-width: 768px) {
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.75rem; }
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: 3.5rem; }
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 2rem; }
+}
