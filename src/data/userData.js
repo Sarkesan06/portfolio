@@ -2,7 +2,7 @@ export const userData = {
   name: "SARKESAN S",
   title: "Software Developer",
   email: "sarkesansarkesan@gmail.com",
-  location: "Tamilnadu,India",
+  location: "TamilNadu,India",
   bio: "Software engineer specializing in [Python/Go/Java/React/etc.], focused on building scalable and maintainable systems. I believe in the power of clean code, smart architecture, and user-centric design",
   about: "I'm a software developer with hands on experience specializing in frontend development with React and modern JavaScript. I have a strong foundation in user experience design and a passion for creating intuitive, accessible web applications that solve real problems.\n\n I believe in continuous learning and sharing knowledge with the developer community.",
   social: {
