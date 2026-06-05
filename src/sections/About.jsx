@@ -7,7 +7,6 @@ import '../styles/About.css'
 
 const About = () => {
   const { theme } = useTheme()
-  const avatarImage = 'https://www.lookslikegrass.com.au/wp-content/uploads/2022/07/avatar1.jpg'
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true
@@ -109,10 +108,8 @@ const About = () => {
               <h3>Internships</h3>
               <div className="experience-timeline">
                 {userData.experience && userData.experience.map((exp, index) => (
-                  <div className="timeline-item about-card-row" key={index}>
-                    <div className="about-card-avatar">
-                      <img src={avatarImage} alt="Internship avatar" />
-                    </div>
+                  <div className="timeline-item" key={index}>
+                    <div className="timeline-dot"></div>
                     <div className="timeline-content">
                       <h4>{exp.position}</h4>
                       <h5>{exp.company}</h5>
@@ -125,50 +122,53 @@ const About = () => {
             </motion.div>
             
             <motion.div className="about-education" variants={itemVariants}>
-              <h3>🎓 Education</h3>
-              <div className="education-list">
-                {userData.education && userData.education.map((edu, index) => (
-                  <div className="education-item about-card-row" key={index}>
-                    <div className="about-card-avatar">
-                      <img src={avatarImage} alt="Education avatar" />
-                    </div>
-                    <div className="education-details">
-                      <h4>{edu.degree}</h4>
-                      <h5>{edu.institution}</h5>
-                      <p className="education-duration">📅 {edu.duration}</p>
-                      {edu.cgpa && <p className="education-score">⭐ CGPA: {edu.cgpa}</p>}
-                      {edu.percentage && <p className="education-score">⭐ Percentage: {edu.percentage}</p>}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div className="about-languages" variants={itemVariants}>
-              <h3>🌐 Language Proficiency</h3>
-              <div className="languages-container">
-                {userData.languages && userData.languages.map((lang, index) => (
-                  <div key={index} className="language-card about-card-row">
-                    <div className="about-card-avatar">
-                      <img src={avatarImage} alt="Language avatar" />
-                    </div>
-                    <div className="language-details">
-                      <div className="language-name-wrapper">
-                        <div className="language-icon">{lang.name === 'Tamil' ? '📜' : '🌍'}</div>
-                        <h4>{lang.name}</h4>
-                      </div>
-                      <div className="language-proficiency-bar">
-                        <div
-                          className="proficiency-fill"
-                          style={{ width: lang.name === 'Tamil' ? '100%' : '85%' }}
-                        ></div>
-                      </div>
-                      <p className="proficiency-level">📈 {lang.proficiency}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+  <h3>🎓 Education</h3>
+  <div className="education-list">
+    {userData.education && userData.education.map((edu, index) => (
+      <div className="education-item" key={index}>
+        <div className="education-icon">
+          {index === 0 ? "🎓" : "📚"}
+        </div>
+        <div className="education-details">
+          <h4>{edu.degree}</h4>
+          <h5>{edu.institution}</h5>
+          <p className="education-duration">
+            📅 {edu.duration}
+          </p>
+          {edu.cgpa && <p className="education-score">⭐ CGPA: {edu.cgpa}</p>}
+          {edu.percentage && <p className="education-score">⭐ Percentage: {edu.percentage}</p>}
+        </div>
+      </div>
+    ))}
+  </div>
+</motion.div>
+            {/* Professional Languages Section - Add this after certifications */}
+<motion.div className="about-languages" variants={itemVariants}>
+  <h3>🌐 Language Proficiency</h3>
+  <div className="languages-container">
+    {userData.languages && userData.languages.map((lang, index) => (
+      <div key={index} className="language-card">
+        <div className="language-name-wrapper">
+          <div className="language-icon">
+            {lang.name === "Tamil" ? "📜" : "🌍"}
+          </div>
+          <h4>{lang.name}</h4>
+        </div>
+        <div className="language-proficiency-bar">
+          <div 
+            className="proficiency-fill"
+            style={{ 
+              width: lang.name === "Tamil" ? "100%" : "85%"
+            }}
+          ></div>
+        </div>
+        <p className="proficiency-level">
+          📈 {lang.proficiency}
+        </p>
+      </div>
+    ))}
+  </div>
+</motion.div>
 
             
             
@@ -177,8 +177,10 @@ const About = () => {
           </motion.div>
         </motion.div>
       </div>
+  
     </section>
   )
 }
+
 
 export default About
